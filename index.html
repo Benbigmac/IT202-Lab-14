@@ -6,21 +6,25 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="1099363983217-uv850jdtat6r9b6kijo5ithkvul0ebeh.apps.googleusercontent.com">
-    <script src="script.js"></script>
+    <script src="login.js"></script>
+     <script src="calendar.js"></script>
 </head>
 <body>
 
     <h1>LOG IN WITH GOOGLE TEST SITE</h1>
-    <div id="sign" class="g-signin2" data-onsuccess="onSignIn"></div>
-    <a id='logOut' href="#" onclick="signOut();"style="display:none;">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-        alert("You've logged Out")
-    });
-  }
-</script>
+<!--    <div id="sign" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a id='logOut' href="#" onclick="signOut();"style="display:none;">Sign out</a> -->
+     <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+    <h1>Google Calendar API TEST ZONE</h1>
+
+   
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+  <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 </html>
