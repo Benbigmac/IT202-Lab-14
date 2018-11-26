@@ -13,7 +13,7 @@ function onSignIn(googleUser) {
     } else {
         x.style.display = "none";
         y.style.display = "inline";
-        window.reload();
+        
     }
     
 }
@@ -24,7 +24,16 @@ function onSignIn(googleUser) {
     auth2.signOut().then(function () {
       console.log('User signed out.');
         alert("You've logged Out");
-        window.reload();
+        var x = document.getElementById("sign");
+    var y =  document.getElementById("logOut");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+      //  y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "inline";
+        
+    }
     });
   }
 
